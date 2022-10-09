@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html>
+<head>
+    
+<title>Simple Interest calculator</title>
+<link rel="stylesheet" href="main.css">
+</head>
+<body>
+<div class="screen">
+<div class="box">
+<h1>Simple Interest Calculator</h1>
+<div class="contents">
+    
+<table id="table">
+<tbody>
+<tr>
+<td class="labels"><b>Amount</b></td>
+<td>
+<input type="number" id="principal">
+</td>
+</tr>
+<tr>
+<td class="labels"><b>Interest Rate</b></td>
+<td>
+<input type="range" min="1" max="20" step="0.25" value="10.25" id="rate" name="rate" onchange="SliderValue()"> 
+<span id="rate_display">10.25%</span>
+</td>
+</tr>
+<tr>
+<td class="labels"><b>No. of Years</b></td>
+    
+<td>
+<select name="years" id="years">
+<option value="1">1</option>
+<option value="2">2</option>
+<option value="3">3</option>
+<option value="4">4</option>
+<option value="5">5</option>
+<option value="6">6</option>
+<option value="7">7</option>
+<option value="8">8</option>
+<option value="9">9</option>
+<option value="10">10</option>
+<option value="11">11</option>
+<option value="12">12</option>
+<option value="13">13</option>
+<option value="14">14</option>
+<option value="15">15</option>
+</select>
+</td>
+</tr>
+</tbody>
+</table>
+    
+<button id="compute" onclick="compute()">Calculate Simple Interest</button> <br>
+<span id="result"> </span>
+<span id="total_amount"> </span>
+        
+</div>
+</div>
+</div>
+        
+<script>
+function compute()
+{
+var principal = document.getElementById("principal").value;
+
+if(principal !== "")
+{
+if (principal <= 0){
+alert("Invalid input. Please enter a positive number.");
+document.getElementById("principal").focus();
+return;
+}
+}
+else{
+alert("Enter Amount.");
+return;
+}
+var rate = document.getElementById("rate").value;
+var years = document.getElementById("years").value;
+var interest = principal * years * rate / 100;
+
+var dateNow = new Date();
+var yearNow = parseInt(dateNow.getFullYear()) + parseInt(years);
+
+var resultDisplay = document.getElementById("result");
+resultDisplay.innerHTML = "<br/>  If you deposit " + "<span class='highlight'>" + principal + "</span> Rupees.<br/>" + "<br> At an interest Rate of "+ "<span class='highlight'>" + rate + "</span>%." + "<br/><br/> You will receive an amount of " + "<span class='highlight'>" + interest + "</span> Rupees" + " in the year " + "<span class='highlight'>" + yearNow + "</span>";
+
+var full_Display = document.getElementById("total_amount");
+
+var t = parseFloat(principal) + parseFloat(interest);
+full_Display.innerHTML = "<br/><br/> Your Total amount is: <span class='highlight'>" +t+ "</span> Rupees.";
+}
+function SliderValue()
+{
+var slider = document.getElementById("rate");
+var output = document.getElementById("rate_display");
+output.innerHTML = slider.value;
+slider.oninput = function() 
+{
+output.innerHTML = this.value;
+} 
+}
+   
+        
+</script>
+    <footer>
+        &#169;Ecveryone Can Get Rich.
+        <br/>This calculator belongs to Rameesha Qadir.</footer>
+</body>
+</html>

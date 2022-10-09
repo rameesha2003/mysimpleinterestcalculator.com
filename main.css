@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: sans-serif;
+}
+.screen{
+    width: 100%;
+    height: 100vh;
+    position: relative;
+    overflow: hidden;
+    background: linear-gradient(to right, #eece13,#b210ff)
+}
+.box{
+background-color: #ffffff;
+color: black;
+width: 600px;
+padding: 40px;
+margin-top:10%;
+border-radius: 30px;
+margin-left: auto;
+margin-right: auto;
+
+}
+.contents
+{
+margin-left: 80px;
+}
+table td
+{
+padding-bottom: 10px;
+}
+h1
+{color:dimgrey;
+font-family: verdana;}
+#compute
+{
+margin-top:20px;
+margin-bottom: 20px;
+background-color: green;
+border-radius:8px;
+border: 20px;
+color: white;
+font-size:20px;
+height: 40px;
+width: 300px;
+
+}
+#principal{
+height:25px;
+width: 190px;
+color:black;
+border-color:black; 
+
+}
+#years{
+height: 35px;
+width: 200px;
+color:black;
+border-color:black;
+
+}
+.highlight
+{
+background-color: #ffff00;
+}
